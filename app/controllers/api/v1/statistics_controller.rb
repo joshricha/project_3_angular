@@ -1,6 +1,6 @@
 module Api
   module V1
-    class StatisticsController < ApplicaitonController
+    class StatisticsController < ApplicationController
       skip_before_filter :verify_authenticity_token
       respond_to :json
 
