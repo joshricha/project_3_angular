@@ -1,8 +1,32 @@
- <section id="meditationapp" ng-controller="MainCtrl">
 
-  <h1>Test</h1>
 
- </section>
+ <!-- HEADER AND NAVBAR -->
+<!-- <header>
+    <nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Angular Routing Example</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+            <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        </ul>
+    </div>
+    </nav>
+</header> -->
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div id="main">
+
+    <div ng-view></div>
+
+    <section ng-controller="StatisticCtrl">
+      <p>{{ statistic.times_meditated }}</p>
+    </section>
+
+</div>
 
 <!-- <section id="meditationapp" ng-controller="MainCtrl">
   <ng-view></ng-view>
@@ -66,4 +90,3 @@
     <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
   </footer>
 </section>
- -->

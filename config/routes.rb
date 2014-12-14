@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       # will need to add more resources when new models are created
-      resources :statistics
+      resources :statistics, :meditations
     end
   end
 end
