@@ -6,62 +6,40 @@
         <h1>Right Mind</h1>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a ui-sref="home"><i class="fa fa-home"></i> Home</a></li>
         <li><a ui-sref="about"><i class="fa fa-shield"></i> About</a></li>
-        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        <li><a ui-sref="contact"><i class="fa fa-comment"></i> Contact</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
+<div  class="main-view-container" ui-view>
+
+  <h1>Home</h1>
+
+  <section >
+    <div class="selections">
 
 
 
+      <ul class="selection-items">
+        <li><a ng-click="medTime(5)" href="#"><i class="select-box"></i>5 Minutes</a></li>
+        <li><a ng-click="medTime(10)" href="#"><i class="select-box"></i>10 Minutes</a></li>
+        <li><a ng-click="medTime(20)" href="#"><i class="select-box"></i>20 Minutes</a></li>
+        <li><a ng-click="medTime(20)" href="#"><i class="select-box"></i>Start Meditation</a></li>
+      </ul>
+    </div>
+  </section>
 
-<div class="main-view-container" ui-view>
+  <section ng-controller="StatisticCtrl">
+    <p>{{ statistic[0].times_meditated }}</p>
+  </section>
 
-  <h1>Test</h1>
-
-</div>
-
-
-
-
-
-<section ng-controller="MedOptionsCtrl">
-  <div class="selections">
-    <h2>Quick Starts (Timer)</h2>
-    <ul class="selection-items">
-      <li><a ng-click="quickStart10()" href="#"><i class="select-box"></i>10 Minute</a></li>
-      <li><a ng-click="quickStart20()" href="#"><i class="select-box"></i>20 Minute</a></li>
-    </ul>
-
-    <h2>Custom Meditations</h2>
-    <ul class="selection-items">
-      <li><a ng-click="setGuide(true)" href="#"><i class="select-box"></i>With Guide</a></li>
-      <li><a ng-click="setGuide(false)" href="#"><i class="select-box"></i>No Guide</a></li>
-    </ul>
-
-    <ul class="selection-items">
-      <li><a ng-click="setMusic(true)" href="#"><i class="select-box"></i>With Music</a></li>
-      <li><a ng-click="setMusic(false)" href="#"><i class="select-box"></i>No Music</a></li>
-    </ul>
-
-    <ul class="selection-items">
-      <li><a ng-click="medTime(5)" href="#"><i class="select-box"></i>5 Minutes</a></li>
-      <li><a ng-click="medTime(10)" href="#"><i class="select-box"></i>10 Minutes</a></li>
-      <li><a ng-click="medTime(20)" href="#"><i class="select-box"></i>20 Minutes</a></li>
-      <li><a ng-click="medTime(20)" href="#"><i class="select-box"></i>Start Meditation</a></li>
-    </ul>
+  <div ng-controller="MedSessionCtrl">
+    <button ng-click="play()" class="button" ng-show="!playing">Play</button>
+    <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
+    Playing audio: <b>{{ playing }}</b>
   </div>
-</section>
 
-<section ng-controller="StatisticCtrl">
-  <p>{{ statistic[0].times_meditated }}</p>
-</section>
-
-<div ng-controller="MedSessionCtrl">
-  <button ng-click="play()" class="button" ng-show="!playing">Play</button>
-  <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
-  Playing audio: <b>{{ playing }}</b>
 </div>
