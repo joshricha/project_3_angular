@@ -1,16 +1,16 @@
 angular.module('app')
-  .service('MeditationSessionServ', function MeditationSessionServ() {
+  .service('MeditationSessionServ', function () {
 
     window.addressService = this;
     var _self = this;
 
-    // this.getAddressString = function () {
-    //   return _self.addressString;
-    // };
-
     this.setGuide = function (guide) {
       _self.guideOn = guide;
       console.log(_self.guideOn);
+    };
+
+    this.getGuide = function (guide) {
+      return _self.guideOn;
     };
 
     // this.getAddressParts = function() {

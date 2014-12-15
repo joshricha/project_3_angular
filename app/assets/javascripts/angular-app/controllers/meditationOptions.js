@@ -1,4 +1,4 @@
-app.controller('MedOptionsCtrl', ['$scope','MeditationSessionServ', function($scope){
+app.controller('MedOptionsCtrl', ['$scope','MeditationSessionServ', function($scope, MeditationSessionServ){
 
   $scope.quickStart10 = function() {
     // quick start 10 with no music or guide
