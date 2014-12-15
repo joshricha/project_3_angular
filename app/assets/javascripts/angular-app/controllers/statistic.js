@@ -1,7 +1,6 @@
-app
-  .controller('StatisticCtrl', function($http, $scope){
-    $scope.title = "Statistic";
+app.controller('StatisticCtrl', function($http, $scope){
     $scope.statistic = [];
+
     var getStatistics = function () {
       $http.get('http://localhost:3000/api/v1/statistics')
         .success(function(data){

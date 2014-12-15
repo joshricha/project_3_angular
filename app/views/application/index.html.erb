@@ -1,92 +1,51 @@
-
-
- <!-- HEADER AND NAVBAR -->
-<!-- <header>
-    <nav class="navbar navbar-default">
+<!-- HEADER AND NAVBAR -->
+<header>
+  <nav class="navbar navbar-default">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">Angular Routing Example</a>
-        </div>
-
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-            <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-        </ul>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Angular Routing Example</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+          <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+      </ul>
     </div>
-    </nav>
-</header> -->
+  </nav>
+</header>
 
-<!-- MAIN CONTENT AND INJECTED VIEWS -->
-<div id="main">
 
-    <div ng-view></div>
 
-    <section ng-controller="StatisticCtrl">
-      <p>{{ statistic.times_meditated }}</p>
-    </section>
-
-</div>
-
-<!-- <section id="meditationapp" ng-controller="MainCtrl">
-  <ng-view></ng-view>
-  <header id="header">
-    <h1>todos</h1>
-    <form id="meditation-form" ng-submit="save(activeTodo)">
-      <input
-      id="new-todo"
-      placeholder="What needs to be done?"
-      ng-model="activeTodo.title"
-      autofocus>
-    </form>
-  </header>
-
-  <section id="main" ng-show="todos.length" ng-cloak>
-    <input
-    id="toggle-all"
-    type="checkbox"
-    ng-model="checked"
-    ng-click="checkAll(checked)">
-    <label for="toggle-all">Mark all as complete</label>
-
-    <ul id="todo-list">
-      <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
-        <div class="view">
-          <input
-          class="toggle"
-          type="checkbox"
-          ng-model="todo.completed"
-          ng-click="checkAndSave(todo)">
-          <label ng-dblclick="edit(todo)">{{todo.title}}</label>
-          <button class="destroy" ng-click="remove(todo)"></button>
-        </div>
-      </li>
+<section ng-controller="MedOptions">
+  <div class="selections">
+    <h2>Quick Starts</h2>
+    <ul class="selection-items">
+      <li><a ng-click="setGuide(true)" href="#"><i class="select-box"></i>10 Minute</a></li>
+      <li><a ng-click="setGuide(false)" href="#"><i class="select-box"></i>20 Minute</a></li>
+      <li><a href="#"><i class="select-box"></i>Start With Timer</a></li>
     </ul>
-  </section>
-  <footer id="footer" ng-show="todos.length" ng-cloak>
-    <span id="todo-count"><strong>{{remainingCount}}</strong>
-      <ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }">
-      </ng-pluralize>
-    </span>
-    <ul id="filters">
-      <li>
-        <a ng-class="{selected: status == ''} " href="#/">All</a>
-      </li>
-      <li>
-        <a ng-class="{selected: status == 'active'}" href="#/active">Active</a>
-      </li>
-      <li>
-        <a ng-class="{selected: status == 'completed'}" href="#/completed">Completed</a>
-      </li>
-    </ul>
-    <button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed ({{completedCount}})</button>
-  </footer>
 
-  <footer id="info">
-    <p>Double-click to edit a todo</p>
-    <p>Credits:
-      <a href="http://twitter.com/brettcassette">Brett Cassette</a>,
-    </p>
-    <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-  </footer>
+    <h2>Custom Meditations</h2>
+    <ul class="selection-items">
+      <li><a ng-click="setGuide(true)" href="#"><i class="select-box"></i>With Guide</a></li>
+      <li><a ng-click="setGuide(false)" href="#"><i class="select-box"></i>No Guide</a></li>
+      <li><a href="#"><i class="select-box"></i>Start With Timer</a></li>
+    </ul>
+
+    <ul class="selection-items">
+      <li><a href="#"><i class="select-box"></i>With Music</a></li>
+      <li><a href="#"><i class="select-box"></i>No Music</a></li>
+      <li><a href="#"><i class="select-box"></i>Timer</a></li>
+    </ul>
+
+    <ul class="selection-items">
+      <li><a href="#"><i class="select-box"></i>5 Minutes</a></li>
+      <li><a href="#"><i class="select-box"></i>10 Minutes</a></li>
+      <li><a href="#"><i class="select-box"></i>20 Minutes</a></li>
+    </ul>
+  </div>
+</section>
+
+<section ng-controller="StatisticCtrl">
+  <p>{{ statistic[0].times_meditated }}</p>
 </section>
