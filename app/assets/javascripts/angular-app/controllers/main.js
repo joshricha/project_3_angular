@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app');
 
 app.controller('MainCtrl', ['Statistic', '$scope', function(Statistic, $scope) {
 
@@ -6,8 +6,5 @@ app.controller('MainCtrl', ['Statistic', '$scope', function(Statistic, $scope) {
     $scope.statistics = Statistic.query();
 }]);
 
-app.controller('aboutController', ['$scope'], function($scope){
-  console.log("here")
-  $scope.message = "works"
-});
+
 
