@@ -6,42 +6,37 @@
         <a class="navbar-brand" href="/">Angular Routing Example</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-          <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+        <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
-
-
-<section ng-controller="MedOptions">
+<section ng-controller="MedOptionsCtrl">
   <div class="selections">
-    <h2>Quick Starts</h2>
+    <h2>Quick Starts (Timer)</h2>
     <ul class="selection-items">
-      <li><a ng-click="setGuide(true)" href="#"><i class="select-box"></i>10 Minute</a></li>
-      <li><a ng-click="setGuide(false)" href="#"><i class="select-box"></i>20 Minute</a></li>
-      <li><a href="#"><i class="select-box"></i>Start With Timer</a></li>
+      <li><a ng-click="quickStart10()" href="#"><i class="select-box"></i>10 Minute</a></li>
+      <li><a ng-click="quickStart20()" href="#"><i class="select-box"></i>20 Minute</a></li>
     </ul>
 
     <h2>Custom Meditations</h2>
     <ul class="selection-items">
       <li><a ng-click="setGuide(true)" href="#"><i class="select-box"></i>With Guide</a></li>
       <li><a ng-click="setGuide(false)" href="#"><i class="select-box"></i>No Guide</a></li>
-      <li><a href="#"><i class="select-box"></i>Start With Timer</a></li>
     </ul>
 
     <ul class="selection-items">
-      <li><a href="#"><i class="select-box"></i>With Music</a></li>
-      <li><a href="#"><i class="select-box"></i>No Music</a></li>
-      <li><a href="#"><i class="select-box"></i>Timer</a></li>
+      <li><a ng-click="setMusic(true)" href="#"><i class="select-box"></i>With Music</a></li>
+      <li><a ng-click="setMusic(false)" href="#"><i class="select-box"></i>No Music</a></li>
     </ul>
 
     <ul class="selection-items">
-      <li><a href="#"><i class="select-box"></i>5 Minutes</a></li>
-      <li><a href="#"><i class="select-box"></i>10 Minutes</a></li>
-      <li><a href="#"><i class="select-box"></i>20 Minutes</a></li>
+      <li><a ng-click="medTime(5)" href="#"><i class="select-box"></i>5 Minutes</a></li>
+      <li><a ng-click="medTime(10)" href="#"><i class="select-box"></i>10 Minutes</a></li>
+      <li><a ng-click="medTime(20)" href="#"><i class="select-box"></i>20 Minutes</a></li>
     </ul>
   </div>
 </section>
