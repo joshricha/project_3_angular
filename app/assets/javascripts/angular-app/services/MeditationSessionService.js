@@ -1,7 +1,7 @@
 angular.module('app')
   .service('MeditationSessionServ', function () {
 
-    // window.addressService = this;
+    // window.MeditationSessionServ = this;
     var _self = this;
 
     this.setGuide = function(guide) {
@@ -10,7 +10,7 @@ angular.module('app')
     };
 
     this.getGuide = function() {
-      return _self.guideOn;
+      console.log(_self.guideOn);
     };
 
     this.setMusic = function(music) {

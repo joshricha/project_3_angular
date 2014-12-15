@@ -7,5 +7,7 @@ app.controller('MainCtrl', ['Statistic', '$scope', function(Statistic, $scope) {
 }]);
 
 app.controller('aboutController', ['$scope'], function($scope){
+  console.log("here")
   $scope.message = "works"
 });
+
