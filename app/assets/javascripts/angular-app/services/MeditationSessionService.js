@@ -1,71 +1,35 @@
 angular.module('app')
   .service('MeditationSessionServ', function () {
 
-    window.addressService = this;
+    // window.addressService = this;
     var _self = this;
 
-    this.setGuide = function (guide) {
+    this.setGuide = function(guide) {
       _self.guideOn = guide;
       console.log(_self.guideOn);
     };
 
-    this.getGuide = function (guide) {
+    this.getGuide = function() {
       return _self.guideOn;
     };
 
-    // this.getAddressParts = function() {
-    //   return _self.addressParts;
-    // };
+    this.setMusic = function(music) {
+      _self.musicOn = music;
+      console.log(_self.musicOn);
+    };
 
-    // this.setAddressParts = function (address) {
-    //   _self.addressObject = {};
-    //   _self.addressParts = address;
-    //   var addressParts = _self.addressParts;
+    this.getMusic = function() {
+      return _self.musicOn;
+    };
 
-    //   for (var i = 0; i < addressParts.length; i++) {
-    //     _self.addressObject[address[i].types[0]] = addressParts[i].short_name;
-    //   };
-    // };
+    this.setTime = function(time){
+      _self.medTime = time;
+      console.log(_self.medTime);
+    };
 
-    // this.getAddressObject = function () {
-    //   return _self.addressObject;
-    // };
-
-    // this.getState = function () {
-    //   if (_self.addressObject) {
-    //     return _self.addressObject.administrative_area_level_1
-    //   } else {
-    //     return 'VIC'
-    //   }
-    // };
-
-    // this.getStreetNumber = function () {
-    //   return _self.addressObject.street_number;
-    // };
-
-    // this.getStreetName = function () {
-    //   return _self.addressObject.route;
-    // };
-
-    // this.getCity = function () {
-    //   return _self.addressObject.locality;
-    // };
-
-    // this.getCountry = function () {
-    //   return _self.addressObject.country;
-    // };
-
-    // this.getPostCode = function () {
-    //   return _self.addressObject.postal_code;
-    // };
-
-    // this.getCoords = function () {
-    //   return _self.coords;
-    // };
-
-    // this.setCoords = function (coords) {
-    //   _self.coords = {lat: coords.lat, lng: coords.lng};
-    // };
+    this.getTime = function(){
+      return _self.medTime;
+    };
 
     return this;
   });

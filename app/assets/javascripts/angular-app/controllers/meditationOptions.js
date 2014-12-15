@@ -13,13 +13,11 @@ app.controller('MedOptionsCtrl', ['$scope','MeditationSessionServ', function($sc
   };
 
   $scope.setMusic = function(musicOn) {
-    // MeditationSessionServ.setMusic(musicOn);
+    MeditationSessionServ.setMusic(musicOn);
   };
 
   $scope.medTime = function(time) {
-    // MeditationSessionServ.setTime(time);
+    MeditationSessionServ.setTime(time);
   };
-
-
 
 }]);
