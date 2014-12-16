@@ -20,8 +20,4 @@ app.controller('MedOptionsCtrl', ['$scope','MeditationSessionServ', function($sc
     MeditationSessionServ.setTime(time);
   };
 
-  $scope.startSession = function() {
-    MedSessionCtrl.stop();
-  };
-
 }]);

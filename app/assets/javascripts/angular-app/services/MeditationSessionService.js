@@ -6,16 +6,14 @@ angular.module('app')
 
     this.setGuide = function(guide) {
       _self.guideOn = guide;
-      console.log(_self.guideOn);
     };
 
     this.getGuide = function() {
-      console.log(_self.guideOn);
+      return _self.guideOn;
     };
 
     this.setMusic = function(music) {
       _self.musicOn = music;
-      console.log(_self.musicOn);
     };
 
     this.getMusic = function() {
@@ -24,7 +22,6 @@ angular.module('app')
 
     this.setTime = function(time){
       _self.medTime = time;
-      console.log(_self.medTime);
     };
 
     this.getTime = function(){
