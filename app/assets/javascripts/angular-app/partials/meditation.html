@@ -7,11 +7,11 @@
     <li><a ng-click="startSession()" href="#"><i class="select-box"></i>Start Meditation</a></li>
   </ul>
 </section> -->
-  <section ng-controller="StatisticCtrl">
+  <section>
     <p>{{ statistic[0].times_meditated }}</p>
   </section>
 
-  <div ng-controller="MedSessionCtrl">
+  <div>
     <button ng-click="play()" class="button" ng-show="!playing">Play</button>
     <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
     Playing audio: <b>{{ playing }}</b>

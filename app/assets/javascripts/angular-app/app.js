@@ -36,7 +36,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       })
       .state('meditation', {
         url: '/meditation',
-        templateUrl: '/assets/angular-app/partials/meditation.html'
+        templateUrl: '/assets/angular-app/partials/meditation.html',
+        controller: 'MedSessionCtrl'
       })
 
     // default fall back route
