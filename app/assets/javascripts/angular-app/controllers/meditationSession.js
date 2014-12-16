@@ -18,28 +18,36 @@ app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($s
     } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  20)) {
       console.log("Guide on, voice on - 20mins")
 
-    } else if (MeditationSessionServ.getGuide(false) && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
+    } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
       console.log("guide off, music on, time 10")
 
-    } else if (MeditationSessionServ.getGuide(false) && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  20)) {
+    } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  20)) {
       console.log("guide off, music on, time 20")
 
-    } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic(false) && (MeditationSessionServ.getTime() ==  10)) {
+    } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() == false && MeditationSessionServ.getTime() ==  10) {
       console.log("guide on, music off, time 10")
 
-    } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic(false) && (MeditationSessionServ.getTime() ==  20)) {
+    } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() == false && (MeditationSessionServ.getTime() ==  20)) {
       console.log("guide on, music off, time 20")
-
+    } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() == false && (MeditationSessionServ.getTime() ==  10)) {
+      console.log("guide on, music off, time 20")
+    } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() == false && (MeditationSessionServ.getTime() ==  20)) {
+      console.log("guide on, music off, time 20")
     } else {
       console.log("not chosen.")
     };
 
   };
 
+  var myFunction = function(){
+    console.log("in my func");
+  };
+
   var playTrack = function(mp3){
 
     $scope.playing = false;
     $scope.audio = document.createElement('audio');
+    $scope.audio.addEventListener("ended", myFunction);
     $scope.audio.src = mp3;
     $scope.play = function() {
       $scope.audio.play();
