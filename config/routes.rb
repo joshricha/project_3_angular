@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
       # will need to add more resources when new models are created
       resources :statistics, :meditations
+      get "/current_user" => "users#get_current_user"
+
     end
   end
 end
