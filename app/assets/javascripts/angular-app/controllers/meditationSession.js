@@ -13,6 +13,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
     // quick starts
     if (MeditationSessionServ.getQuickStart() == 10) {
       playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
+      $scope.time = 10;
 
     } else if (MeditationSessionServ.getQuickStart() == 20) {
       console.log("starting 20")
@@ -25,7 +26,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
     if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
       console.log("music and voice on and 10 mins");
       playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
-      var time = 10;
+      $scope.time = 10;
 
     } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  20)) {
       console.log("Guide on, voice on - 20mins")
@@ -66,9 +67,18 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
 
   var setStats = function(userInfo) {
     userId = userInfo.id;
+    console.log("You med for " + $scope.time)
+    time = $scope.time * 60
+    console.log("Time is: " + time)
 
-
-
+    $http.post('http://localhost:3000/api/v1/statistics', {user_id: userId, seconds_meditated: time}).
+      success(function(data, status, headers, config) {
+      console.log("data sent!!!")
+    }).
+      error(function(data, status, headers, config) {
+      console.log("narrrrrr")
+  });
+    // put or patch
   }
 
   var playTrack = function(mp3){

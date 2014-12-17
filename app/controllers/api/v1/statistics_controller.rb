@@ -13,6 +13,7 @@ module Api
       end
 
       def create
+        binding.pry
         @statistic = Statistic.new(statistic_params)
         if @statistic.save
           respond_to do |format|
@@ -37,7 +38,7 @@ module Api
     private
       def statistic_params
         # need to add more permits
-        params.require(:statistic).permit(:user_id)
+        params.require(:statistic).permit(:user_id, :seconds_meditated)
       end
     end
   end

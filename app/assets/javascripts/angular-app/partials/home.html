@@ -1,12 +1,9 @@
-<h2>Home</h2>
-
-<section>
+<div class="row">
   <div class="selections" ui-view>
-    <h2>Quick Starts (Timer)</h2>
-    <ul class="selection-items">
-      <li><a ui-sref="meditation" ng-click="quickStart(10)" ><i class="select-box"></i>10 Minute</a></li>
-      <li><a ui-sref="meditation" ng-click="quickStart(20)" ><i class="select-box"></i>20 Minute</a></li>
-      <li><a ui-sref="guide"><i class="select-box"></i>Custom Meditation</a></li>
-    </ul>
+    <div class="col-md-6 text-center"><a ui-sref="meditation" ng-click="quickStart(10)" ><i class="select-box"></i>10 Minute</a></div>
+
+    <div class="col-md-6 text-center"><a ui-sref="meditation" ng-click="quickStart(20)" ><i class="select-box"></i>20 Minute</a></div>
+
+    <div class="col-med-12 text-center"><a ui-sref="guide" class=""><i class="select-box"></i>Custom Meditation</a></div>
   </div>
-</section>
+</div>

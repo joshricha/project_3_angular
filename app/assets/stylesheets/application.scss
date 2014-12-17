@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+
+body {
+  background: url(https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/SlKW6Xlb6kO1ubL/bg_cropped.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+p, a {
+  font-family: 'Francois One', sans-serif;
+}
+
+a {
+  color: #fff;
+}
+
+.logo {
+  font-family: 'Great Vibes', cursive;
+  padding-top: 180px;
+  color: #fff;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 7.5em;
+    background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/rm44zgEGMpJZRXW/logo-bw.png)  ;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+
+}
