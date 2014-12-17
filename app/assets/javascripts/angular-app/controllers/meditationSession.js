@@ -1,4 +1,4 @@
-app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($scope, MeditationSessionServ){
+app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', function($scope, $http,  MeditationSessionServ){
 
   // for testing don't delete
   window.medservice = MeditationSessionServ
@@ -12,55 +12,20 @@ app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($s
 
     // quick starts
     if (MeditationSessionServ.getQuickStart() == 10) {
-      console.log("starting 10")
+      playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
 
     } else if (MeditationSessionServ.getQuickStart() == 20) {
       console.log("starting 20")
 
     };
 
-    // refactoring the if else. Should put this in a function which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
-
-    // if (MeditationSessionServ.getTime() ==  10)) {
-    //   if (MeditationSessionServ.getGuide()) {
-    //     // 10 minute timer and guide on
-    //     if (MeditationSessionServ.getMusic()) {
-    //       // 10 min timer guide on and music on
-    //     } else {
-    //       // 10 min timer guide on and music off
-    //     };
-    //   } else {
-    //     // 10 minute timer and guide off
-    //       if (MeditationSessionServ.getMusic()) {
-    //       // 10 minute timer and guide off music off
-    //     } else {
-    //        // 10 minute timer and guide off music on
-    //     }
-    //   }
-
-    // } else if (MeditationSessionServ.getTime() ==  20)) {
-    //     if (MeditationSessionServ.getGuide()) {
-    //     // 20 minute timer and guide on
-    //       if (MeditationSessionServ.getMusic()) {
-    //       // 20 min timer guide on and music on
-    //       } else {
-    //       // 20 min timer guide on and music off
-    //       };
-    //     } else {
-    //       // 20 minute timer and guide off
-    //       if (MeditationSessionServ.getMusic()) {
-    //       // 20 minute timer and guide off music off
-    //     } else {
-    //        // 20 minute timer and guide off music on
-    //     }
-    //   }
-    // }
-
+    // Should put this in a function which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
 
     // checks which track to play according to the chosen options
     if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
       console.log("music and voice on and 10 mins");
-      playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg')
+      playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
+      var time = 10;
 
     } else if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  20)) {
       console.log("Guide on, voice on - 20mins")
@@ -83,26 +48,34 @@ app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($s
     } else {
       console.log("not chosen.")
     };
-
   };
 
-  // var quickStart = function(time){
-  //   if (time == 10) {
-  //     console.log("starting quick 10")
-  //   } else {
-  //     console.log("starting quick 20")
-  //   };
-  // };
-
-  var myFunction = function(){
-    console.log("in my func");
+  var getUser = function(){
+    $http.get('http://localhost:3000/api/v1/current_user')
+  .success(function(data){
+    $scope.user = data;
+    window.user = $scope.user;
+    setStats(data);
+    return data
+  })
+  .error(function(data){
+    console.log('error', data);
+    return data;
+    });
   };
+
+  var setStats = function(userInfo) {
+    userId = userInfo.id;
+
+
+
+  }
 
   var playTrack = function(mp3){
 
     $scope.playing = false;
     $scope.audio = document.createElement('audio');
-    $scope.audio.addEventListener("ended", myFunction);
+    $scope.audio.addEventListener("ended", getUser);
     $scope.audio.src = mp3;
     $scope.play = function() {
       $scope.audio.play();
