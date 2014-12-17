@@ -4,8 +4,8 @@
   <div class="selections" ui-view>
     <h2>Quick Starts (Timer)</h2>
     <ul class="selection-items">
-      <li><a ng-click="quickStart10()" href="#"><i class="select-box"></i>10 Minute</a></li>
-      <li><a ng-click="quickStart20()" href="#"><i class="select-box"></i>20 Minute</a></li>
+      <li><a ui-sref="meditation" ng-click="quickStart(10)" ><i class="select-box"></i>10 Minute</a></li>
+      <li><a ui-sref="meditation" ng-click="quickStart(20)" ><i class="select-box"></i>20 Minute</a></li>
       <li><a ui-sref="guide"><i class="select-box"></i>Custom Meditation</a></li>
     </ul>
   </div>
