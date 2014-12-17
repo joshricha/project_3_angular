@@ -10,6 +10,15 @@ app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($s
 
   var initMeditation = function(){
 
+    // quick starts
+    if (MeditationSessionServ.getQuickStart() == 10) {
+      console.log("starting 10")
+
+    } else if (MeditationSessionServ.getQuickStart() == 20) {
+      console.log("starting 20")
+
+    };
+
     // refactoring the if else. Should put this in a function which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
 
     // if (MeditationSessionServ.getTime() ==  10)) {
@@ -77,13 +86,13 @@ app.controller('MedSessionCtrl', ['$scope', 'MeditationSessionServ', function($s
 
   };
 
-  var quickStart = function(time){
-    if (time == 10) {
-      console.log("starting quick 10")
-    } else {
-      console.log("starting quick 20")
-    };
-  };
+  // var quickStart = function(time){
+  //   if (time == 10) {
+  //     console.log("starting quick 10")
+  //   } else {
+  //     console.log("starting quick 20")
+  //   };
+  // };
 
   var myFunction = function(){
     console.log("in my func");

@@ -4,6 +4,14 @@ angular.module('app')
     // window.MeditationSessionServ = this;
     var _self = this;
 
+    this.setQuickStart = function(number) {
+      _self.quickStart = number;
+    };
+
+    this.getQuickStart = function(number) {
+      return _self.quickStart;
+    };
+
     this.setGuide = function(guide) {
       _self.guideOn = guide;
     };

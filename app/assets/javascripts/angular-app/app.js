@@ -7,7 +7,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       .state('home', {
         url: '/',
         templateUrl: '/assets/angular-app/partials/home.html',
-        controller: 'MedSessionCtrl'
+        controller: 'MedOptionsCtrl'
       })
       .state('about', {
         url: '/about',
