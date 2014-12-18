@@ -33,6 +33,7 @@ app.controller('StatisticCtrl', function($http, $scope){
   };
 
 
+
   var genChart = function() {
     var chart = c3.generate({
     bindto: '#chart',
