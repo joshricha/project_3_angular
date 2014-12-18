@@ -9,7 +9,7 @@ module Api
       end
 
       def show
-        respond_with(Statistic.find(params[:id]))
+        respond_with(Statistic.find_by(user_id: params[:id]))
       end
 
       def create
@@ -30,6 +30,10 @@ module Api
             format.json { render :json => @statistic }
           end
         end
+      end
+
+      def user_stats
+        @statistics = Statistic.find_by(user_id: params[:id])
       end
 
       def update(statistics)

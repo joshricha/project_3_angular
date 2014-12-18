@@ -3,9 +3,8 @@
           <p class="navbar-text pull-right">
     <div class="left">
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        Logged in as <strong><%= current_user.email %></strong> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> |
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
@@ -14,7 +13,7 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a ui-sref="home"><i class="fa fa-home"></i> Home</a></li>
       <li><a ui-sref="about"><i class="fa fa-shield"></i> About</a></li>
-      <li><a ui-sref="courses"><i class="fa fa-shield"></i> Courses</a></li>
+      <li><a ui-sref="statistics"><i class="fa fa-shield"></i> Statistics</a></li>
       <li><a ui-sref="contact"><i class="fa fa-comment"></i> Contact</a></li>
     </ul>
   </nav>

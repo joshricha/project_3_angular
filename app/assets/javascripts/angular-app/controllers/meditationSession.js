@@ -3,11 +3,6 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
   // for testing don't delete
   window.medservice = MeditationSessionServ
 
-  console.log("Guide on is: " + MeditationSessionServ.getGuide());
-  console.log("Music on is: " + MeditationSessionServ.getMusic());
-  console.log("Time is: " + MeditationSessionServ.getTime());
-
-
   var initMeditation = function(){
 
     // quick starts
