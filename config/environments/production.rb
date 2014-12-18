@@ -45,9 +45,17 @@ Rails.application.configure do
   config.log_level = :info
 
   # stop minification for angular
-  config.assets.compress = true
-  config.assets.js_compressor = NoCompression.new
-  config.assets.css_compressor = NoCompression.new
+    # Compress JavaScripts and CSS
+    class NoCompression
+         def compress(string)
+             # do nothing
+             string
+         end
+     end
+
+     config.assets.compress = true
+     config.assets.js_compressor = NoCompression.new
+     config.assets.css_compressor = NoCompression.new
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
