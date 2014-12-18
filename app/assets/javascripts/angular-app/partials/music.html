@@ -1,8 +1,11 @@
-<h2>Music</h2>
-
-<section>
-  <ul class="selection-items">
-    <li><a ng-click="setMusic(true)" ui-sref="time"><i class="select-box"></i>With Music</a></li>
-    <li><a ng-click="setMusic(false)" ui-sref="time"><i class="select-box"></i>No Music</a></li>
-  </ul>
-</section>
+<div class="row">
+  <div class="selections" ui-view>
+    <div class="col-med-12 text-center options">
+      <a ng-click="setMusic(true)" ui-sref="time" class="goldBtn btn  btn-md">With Music</a></div>
+  </div>
+</div>
+<div class="row">
+  <div class="selections" ui-view>
+    <div class="col-med-12 text-center options"><a ng-click="setMusic(false)" ui-sref="time" class="goldBtn btn  btn-md" ><i class="select-box"></i>No Music</a></div>
+  </div>
+</div>

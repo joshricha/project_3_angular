@@ -1,17 +1,4 @@
-<h2>Start Meditation</h2>
-
-<!--
-<section ng-controller="MedSessionCtrl">
-  <ul class="selection-items">
-    <li><a ng-click="startSession()" href="#"><i class="select-box"></i>Start Meditation</a></li>
-  </ul>
-</section> -->
-  <section>
-    <p>{{ statistic[0].times_meditated }}</p>
-  </section>
-
-  <div>
-    <button ng-click="play()" class="button" ng-show="!playing">Play</button>
-    <button ng-click="stop()" class="button alert" ng-show="playing">Stop</button>
-    Playing audio: <b>{{ playing }}</b>
-  </div>
+<div class="center">
+  <button ng-click="play()" class="goldBtn btn  btn-md white" ng-show="!playing">Play</button>
+  <button ng-click="stop()" class="redBtn btn  btn-md white" ng-show="playing">Stop</button>
+</div>

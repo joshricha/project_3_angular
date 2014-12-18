@@ -1,8 +1,11 @@
-<h2>Time</h2>
-
-<section>
-  <ul class="selection-items">
-    <li><a ng-click="medTime(10)" ui-sref="meditation"><i class="select-box"></i>10 Minutes</a></li>
-    <li><a ng-click="medTime(20)" ui-sref="meditation"><i class="select-box"></i>20 Minutes</a></li>
-  </ul>
-</section>
+<div class="row">
+  <div class="selections" ui-view>
+    <div class="col-med-12 text-center options">
+      <a ng-click="medTime(10)" ui-sref="meditation" class="blueBtn btn  btn-md">10 Minutes</a></div>
+  </div>
+</div>
+<div class="row">
+  <div class="selections" ui-view>
+    <div class="col-med-12 text-center options"><a ng-click="medTime(20)" ui-sref="meditation" class="blueBtn btn  btn-md" ><i class="select-box"></i>20 Minutes</a></div>
+  </div>
+</div>
