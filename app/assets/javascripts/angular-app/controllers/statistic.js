@@ -21,7 +21,7 @@ app.controller('StatisticCtrl', function($http, $scope){
 
     $http.get('api/v1/statistics/' + userId + '.json')
       .success(function(data){
-        console.log(data.seconds_meditated);
+        $scope.timeMeditated = data.seconds_meditated;
         $scope.statistic = data;
         window.statistic = $scope.statistic;
       })

@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 gem 'pry'
 gem 'devise'
 
+gem "d3-rails"
+gem 'c3-rails'
+
+
 gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass'
