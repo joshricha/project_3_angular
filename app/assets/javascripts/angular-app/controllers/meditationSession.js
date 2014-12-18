@@ -44,10 +44,11 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
        $scope.time = 10;
 
     } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() == false && (MeditationSessionServ.getTime() ==  10)) {
+      playTrack('https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/NruhUzs05rmkqLJ/20%20minute%20Guided%20Mindfulness%20Exercise.mp3');
       $scope.time = 20;
 
     } else if (MeditationSessionServ.getGuide() == false && MeditationSessionServ.getMusic() == false && (MeditationSessionServ.getTime() ==  20)) {
-      console.log("guide on, music off, time 20")
+      playTrack('https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/k5sB1jQ8Q6OCBrZ/Meditation%20and%20Healing%20Music%20-%2020%20min%20of%20Deep%20Meditation%20-%20Clouds%2C%20Peace%20and%20Serenity.mp3');
       $scope.time = 20;
 
     } else {
