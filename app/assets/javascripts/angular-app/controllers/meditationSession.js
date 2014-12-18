@@ -52,7 +52,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
   };
 
   var getUser = function(){
-    $http.get('http://localhost:3000/api/v1/current_user')
+    $http.get('api/v1/current_user')
   .success(function(data){
     $scope.user = data;
     window.user = $scope.user;
@@ -71,7 +71,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
     time = $scope.time * 60
     console.log("Time is: " + time)
 
-    $http.post('http://localhost:3000/api/v1/statistics', {user_id: userId, seconds_meditated: time}).
+    $http.post('api/v1/statistics', {user_id: userId, seconds_meditated: time}).
       success(function(data, status, headers, config) {
       console.log("data sent!!!")
     }).
