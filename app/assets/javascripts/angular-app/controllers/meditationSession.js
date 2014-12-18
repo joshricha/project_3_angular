@@ -7,7 +7,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
 
     // quick starts
     if (MeditationSessionServ.getQuickStart() == 10) {
-      playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
+      playTrack('https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/kxuxNl335K00g56/10%20Minute%20TRANSCENDENT%20GUIDED%20MEDITATION.mp3');
       $scope.time = 10;
 
     } else if (MeditationSessionServ.getQuickStart() == 20) {
