@@ -31,8 +31,12 @@ p, a {
   font-family: 'Francois One', sans-serif;
 }
 
-a {
+a, h2 {
   color: #fff;
+}
+
+a:hover {
+  text-decoration:none;
 }
 
 .logo {
@@ -48,5 +52,12 @@ a {
     background-image: url(https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/rm44zgEGMpJZRXW/logo-bw.png)  ;
     background-repeat: no-repeat;
     text-indent: -9999px;
+
+}
+
+div.left {
+  color: #fff;
+  float: left;
+  margin-top: 13px;
 
 }

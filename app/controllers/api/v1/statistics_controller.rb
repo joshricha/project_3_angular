@@ -13,7 +13,17 @@ module Api
       end
 
       def create
-        binding.pry
+
+        # redirects if the user has not signed up
+        redirect_to "/users/sign_up"  unless user_signed_in?
+
+        # if this user already has stats it will update
+        if !Statistic.where(user_id: current_user.id).empty?
+
+          update(statistic_params)
+          return
+        end
+
         @statistic = Statistic.new(statistic_params)
         if @statistic.save
           respond_to do |format|
@@ -22,13 +32,13 @@ module Api
         end
       end
 
-      def update
-        @statistic = Statistic.find(params[:id])
-        if @statistic.update(todo_params)
-          respond_to do |format|
-            format.json { render :json => @statistic }
-          end
-        end
+      def update(statistics)
+        @statistic = Statistic.find_by(user_id: current_user.id)
+
+        @statistic.seconds_meditated += statistics[:seconds_meditated]
+        @statistic.save
+        render :json => @statistic
+
       end
 
       def destroy
@@ -37,7 +47,6 @@ module Api
 
     private
       def statistic_params
-        # need to add more permits
         params.require(:statistic).permit(:user_id, :seconds_meditated)
       end
     end

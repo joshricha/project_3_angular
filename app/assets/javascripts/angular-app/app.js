@@ -39,7 +39,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         templateUrl: '/assets/angular-app/partials/meditation.html',
         controller: 'MedSessionCtrl'
       })
-
+      .state('courses', {
+        url: '/courses',
+        templateUrl: '/assets/angular-app/partials/courses.html',
+        controller: 'MainCtrl'
+      })
     // default fall back route
     $urlRouterProvider.otherwise('/');
 
