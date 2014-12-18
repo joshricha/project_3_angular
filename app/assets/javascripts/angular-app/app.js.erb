@@ -14,14 +14,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
         templateUrl: "<%= asset_path 'angular-app/partials/about.html' %>",
         controller: 'AboutContrl'
       })
-      .state('contact', {
-        url: '/contact',
-        templateUrl: "<%= asset_path 'angular-app/partials/contact.html' %>",
-        controller: 'ContactCtrl'
-      })
       .state('guide', {
         url: '/guide',
-        templateUrl: "<%= asset_path '/angular-app/partials/guide.html' %>",
+        templateUrl: "<%= asset_path 'angular-app/partials/guide.html' %>",
         controller: 'MedOptionsCtrl'
       })
       .state('music', {
