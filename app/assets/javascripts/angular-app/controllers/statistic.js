@@ -2,7 +2,7 @@ app.controller('StatisticCtrl', function($http, $scope){
   $scope.statistic = [];
 
   var getStatistics = function () {
-    $http.get('http://localhost:3000/api/v1/statistics')
+    $http.get('api/v1/statistics')
       .success(function(data){
         console.log(data);
         $scope.statistic = data;
