@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'pry'
 gem 'devise'
 
+gem 'rails_12factor', group: :production
+
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 # Use ActiveModel has_secure_password
