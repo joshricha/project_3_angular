@@ -44,6 +44,11 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # stop minification for angular
+  config.assets.compress = true
+  config.assets.js_compressor = NoCompression.new
+  config.assets.css_compressor = NoCompression.new
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
