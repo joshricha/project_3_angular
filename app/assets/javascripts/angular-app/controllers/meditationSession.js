@@ -5,6 +5,11 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
 
   var initMeditation = function(){
 
+    var guide = MeditationSessionServ.getGuide();
+    var music = MeditationSessionServ.getMusic();
+    var time = MeditationSessionServ.getTime();
+
+
     // quick starts
     if (MeditationSessionServ.getQuickStart() == 10) {
       playTrack('https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/kxuxNl335K00g56/10%20Minute%20TRANSCENDENT%20GUIDED%20MEDITATION.mp3');
@@ -16,6 +21,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
     };
 
     // Should put this in a function which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
+
 
     // checks which track to play according to the chosen options
     if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
@@ -82,7 +88,7 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
     }).
       error(function(data, status, headers, config) {
       console.log("narrrrrr")
-  });
+    });
     // put or patch
   }
 
