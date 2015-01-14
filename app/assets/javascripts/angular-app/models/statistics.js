@@ -1,7 +1,7 @@
 var app = angular.module('app')
   .factory('Statistic', function($resource) {
 
-    var Statistic = $resource('http://localhost:3000/api/v1/statistics/:id.json', {id: '@id'}, {
+    var Statistic = $resource('http://rightmind.herokuapp.com/api/v1/statistics/:id.json', {id: '@id'}, {
       update: {
         method: 'PUT'
       }

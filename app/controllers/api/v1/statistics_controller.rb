@@ -39,8 +39,6 @@ module Api
       def update(statistics)
         @statistic = Statistic.find_by(user_id: current_user.id)
 
-        binding.pry
-
         if @statistic.times_meditated == nil
           @statistic.times_meditated = 1
         else
