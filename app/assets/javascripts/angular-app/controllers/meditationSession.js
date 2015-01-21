@@ -19,11 +19,10 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
       $scope.time = 20;
     };
 
-    // Should put this in a function which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
+    // Refactor this into functions which takes params such as voiceOn, music on, length etc then provides the mp3 for those params
 
     // checks which track to play according to the chosen options
     if (MeditationSessionServ.getGuide() && MeditationSessionServ.getMusic() && (MeditationSessionServ.getTime() ==  10)) {
-      // playTrack('http://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg');
       playTrack('https://s3.amazonaws.com/uploads.hipchat.com/39979/1250606/kxuxNl335K00g56/10%20Minute%20TRANSCENDENT%20GUIDED%20MEDITATION.mp3');
       $scope.time = 10;
 
@@ -62,16 +61,16 @@ app.controller('MedSessionCtrl', ['$scope', '$http', 'MeditationSessionServ', fu
 
   var getUser = function(){
     $http.get('api/v1/current_user')
-  .success(function(data){
-    $scope.user = data;
-    window.user = $scope.user;
-    setStats(data);
-    return data
+      .success(function(data){
+        $scope.user = data;
+        window.user = $scope.user;
+        setStats(data);
+        return data
   })
-  .error(function(data){
-    console.log('error', data);
-    return data;
-    });
+      .error(function(data){
+        console.log('error', data);
+        return data;
+        });
   };
 
   var setStats = function(userInfo) {
